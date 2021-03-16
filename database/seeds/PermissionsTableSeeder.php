@@ -186,7 +186,7 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => '45',
-                'title' => 'close_ticket',
+                'title' => 'ticket_close',
             ],
         ];
 

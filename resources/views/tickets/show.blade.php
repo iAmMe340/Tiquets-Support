@@ -83,7 +83,7 @@
                                     @empty
                                         <div class="row">
                                             <div class="col">
-                                                <p>There are no comments.</p>
+                                                <p>No hay comentarios.</p>
                                             </div>
                                         </div>
                                     @endforelse
@@ -94,7 +94,7 @@
                     <form action="{{ route('tickets.storeComment', $ticket->id) }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="comment_text">Leave a comment</label>
+                            <label for="comment_text">Deja un comentario</label>
                             <textarea class="form-control @error('comment_text') is-invalid @enderror" id="comment_text" name="comment_text" rows="3" required></textarea>
                             @error('comment_text')
                                 <span class="invalid-feedback" role="alert">
