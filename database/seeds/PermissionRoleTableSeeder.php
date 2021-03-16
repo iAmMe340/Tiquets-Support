@@ -14,5 +14,9 @@ class PermissionRoleTableSeeder extends Seeder
             return substr($permission->title, 0, 7) == 'ticket_' && $permission->title != 'ticket_delete' && $permission->title != 'ticket_create';
         });
         Role::findOrFail(2)->permissions()->sync($user_permissions);
+        $colaborator_permissions = $admin_permissions->filter(function ($permission) {
+            return substr($permission->title, 0, 7) == 'ticket_' && $permission->title != 'ticket_create' && $permission->title != 'ticket_close';
+        });
+        Role::findOrFail(3)->permissions()->sync($colaborator_permissions);
     }
 }
