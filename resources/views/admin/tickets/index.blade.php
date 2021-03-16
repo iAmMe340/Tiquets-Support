@@ -11,7 +11,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.ticket.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.ticket.title') }}
     </div>
 
     <div class="card-body">
