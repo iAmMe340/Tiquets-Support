@@ -29,7 +29,7 @@
                     <!-- Cod equipo reportado-->
                     <div class="form-group {{ $errors->has('device') ? 'has-error' : '' }}">
                         <label for="device">Cod activo fijo*</label>
-                        <input type="number" id="device" class="form-control" value="{{ old('device', isset($ticket) ? $ticket->device : '') }}" required>
+                        <input type="number" id="device" class="form-control" value="{{ old('device', isset($ticket) ? $ticket->device : '') }}" required disabled>
                         <input type="hidden" id="device_id" name="device_id">
                         @if($errors->has('device'))
                             <em class="invalid-feedback">
