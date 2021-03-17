@@ -97,7 +97,7 @@
             @can('ticket_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.tickets.index") }}" class="nav-link {{ request()->is('admin/tickets') || request()->is('admin/tickets/*') ? 'active' : '' }}">
-                        <i class="fa-fw fas fa-question-circle nav-icon">
+                        <i class="fa fa-ticket nav-icon">
 
                         </i>
                         {{ trans('cruds.ticket.title') }}

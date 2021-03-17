@@ -121,14 +121,7 @@
                                 {{ $ticket->author_name }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>
-                                {{ trans('cruds.ticket.fields.author_email') }}
-                            </th>
-                            <td>
-                                {{ $ticket->author_email }}
-                            </td>
-                        </tr>
+
                         <tr>
                             <th>
                                 {{ trans('cruds.ticket.fields.assigned_to_user') }}
