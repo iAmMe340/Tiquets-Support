@@ -42,7 +42,7 @@
                     </div>
 
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
 
                     <div class="form-group {{ $errors->has('device') ? 'has-error' : '' }}">
                         <label for="device">Nombre activo fijo reportado*</label>
@@ -58,12 +58,10 @@
                     </div>
 
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                     <label class="justify-content-center">Buscar activo fijo</label>
                     <div class="row">
-                        <div class="col-xl-4"><button type="button" class="form-control btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Biomedico <i class="fa-fw fas fa-search nav-icon"></i></button></div>
-                        <div class="col-xl-4"><button type="button" class="form-control btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sistemas <i class="fa-fw fas fa-search nav-icon"></i></button></div>
-                        <div class="col-xl-4"><button type="button" class="form-control btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Mantenimiento <i class="fa-fw fas fa-search nav-icon"></i></button></div>
+                        <div class="col-xl-12"><button type="button" class="form-control btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Busccar activo fijo <i class="fa-fw fas fa-search nav-icon"></i></button></div>
                     </div>
                 </div>
             </div>
