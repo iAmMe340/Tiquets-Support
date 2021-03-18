@@ -11,7 +11,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.ticket.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.ticket.title') }}
     </div>
 
     <div class="card-body">
@@ -67,7 +67,7 @@ let filters = `
 <form class="form-inline" id="filtersForm">
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="status">
-      <option value="">All statuses</option>
+      <option value="">Todos los Estados</option>
       @foreach($statuses as $status)
         <option value="{{ $status->id }}"{{ request('status') == $status->id ? 'selected' : '' }}>{{ $status->name }}</option>
       @endforeach
@@ -75,17 +75,9 @@ let filters = `
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="priority">
-      <option value="">All priorities</option>
+      <option value="">Todas las Prioridades</option>
       @foreach($priorities as $priority)
         <option value="{{ $priority->id }}"{{ request('priority') == $priority->id ? 'selected' : '' }}>{{ $priority->name }}</option>
-      @endforeach
-    </select>
-  </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <select class="form-control" name="category">
-      <option value="">All categories</option>
-      @foreach($categories as $category)
-        <option value="{{ $category->id }}"{{ request('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
       @endforeach
     </select>
   </div>

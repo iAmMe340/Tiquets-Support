@@ -1,56 +1,57 @@
 @extends('layouts.admin')
 @section('content')
 <div class="content">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    Dashboard
-                </div>
-
-                <div class="card-body">
-                    @if(session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card text-white bg-primary">
-                                <div class="card-body pb-3">
-                                    <div class="text-value">{{ number_format($totalTickets) }}</div>
-                                    <div>Total Tickets</div>
-                                    <br />
+    <div class="card">
+    <h5 class="card-header">Dashboard</h5>
+        <div class="card-body">
+        @if(session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="brand-card">
+                            <div class="brand-card-header bg-blue">
+                                <i class="fa fa-ticket"></i>
+                            </div>
+                            <div class="brand-card-body">
+                                <div>
+                                    <div class="text-value"><h1>{{ number_format($totalTickets) }}</h1></div>
+                                    <div class="text-uppercase text-muted small">Total Tickets</div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="card text-white bg-success">
-                                <div class="card-body pb-3">
-                                    <div class="text-value">{{ number_format($openTickets) }}</div>
-                                    <div>Tickets Abiertos</div>
-                                    <br />
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="brand-card">
+                            <div class="brand-card-header bg-green">
+                                <i class="fa fa-warning"></i>
+                            </div>
+                            <div class="brand-card-body">
+                                <div>
+                                    <div class="text-value"><h1>{{ number_format($openTickets) }}</h1></div>
+                                    <div class="text-uppercase text-muted small">Tickets Abiertos</div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="card text-white bg-danger">
-                                <div class="card-body pb-3">
-                                    <div class="text-value">{{ number_format($closedTickets) }}</div>
-                                    <div>Tickets Completados</div>
-                                    <br />
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="brand-card">
+                            <div class="brand-card-header bg-red">
+                                <i class="fa fa-check-circle"></i>
+                            </div>
+                            <div class="brand-card-body">
+                                <div>
+                                    <div class="text-value"><h1>{{ number_format($closedTickets) }}</h1></div>
+                                    <div class="text-uppercase text-muted small">Tickets Cerrados</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
-</div>
 @endsection
 @section('scripts')
 @parent

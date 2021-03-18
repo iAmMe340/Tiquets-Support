@@ -10,7 +10,7 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">Add ticket</div>
+                <div class="card-header">Agregar Ticket</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('tickets.store') }}" enctype="multipart/form-data">
