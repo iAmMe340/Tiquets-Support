@@ -19,9 +19,6 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-Permission">
                 <thead>
                     <tr>
-                        <th width="10">
-
-                        </th>
                         <th>
                             {{ trans('cruds.permission.fields.id') }}
                         </th>
@@ -29,16 +26,14 @@
                             {{ trans('cruds.permission.fields.title') }}
                         </th>
                         <th>
-                            &nbsp;
+                            {{ trans('global.actions') }}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($permissions as $key => $permission)
                         <tr data-entry-id="{{ $permission->id }}">
-                            <td>
 
-                            </td>
                             <td>
                                 {{ $permission->id ?? '' }}
                             </td>
@@ -83,36 +78,6 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('permission_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
-  let deleteButton = {
-    text: deleteButtonTrans,
-    url: "{{ route('admin.permissions.massDestroy') }}",
-    className: 'btn-danger',
-    action: function (e, dt, node, config) {
-      var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
-          return $(entry).data('entry-id')
-      });
-
-      if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
-
-        return
-      }
-
-      if (confirm('{{ trans('global.areYouSure') }}')) {
-        $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
-      }
-    }
-  }
-  dtButtons.push(deleteButton)
-@endcan
-
   $.extend(true, $.fn.dataTable.defaults, {
     order: [[ 1, 'desc' ]],
     pageLength: 100,

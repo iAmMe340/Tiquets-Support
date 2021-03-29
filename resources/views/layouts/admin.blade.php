@@ -139,26 +139,13 @@
   let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
 
   let languages = {
-    'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+    'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
   };
 
   $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
   $.extend(true, $.fn.dataTable.defaults, {
     language: {
       url: languages['{{ app()->getLocale() }}']
-    },
-    columnDefs: [{
-        orderable: false,
-        className: 'select-checkbox',
-        targets: 0
-    }, {
-        orderable: false,
-        searchable: false,
-        targets: -1
-    }],
-    select: {
-      style:    'multi+shift',
-      selector: 'td:first-child'
     },
     order: [],
     scrollX: true,

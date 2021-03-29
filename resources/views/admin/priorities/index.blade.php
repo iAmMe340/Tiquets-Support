@@ -19,9 +19,7 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-Priority">
                 <thead>
                     <tr>
-                        <th width="10">
 
-                        </th>
                         <th>
                             {{ trans('cruds.priority.fields.id') }}
                         </th>
@@ -32,16 +30,14 @@
                             {{ trans('cruds.priority.fields.color') }}
                         </th>
                         <th>
-                            &nbsp;
+                            {{ trans('global.actions') }}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($priorities as $key => $priority)
                         <tr data-entry-id="{{ $priority->id }}">
-                            <td>
 
-                            </td>
                             <td>
                                 {{ $priority->id ?? '' }}
                             </td>
@@ -87,35 +83,6 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('priority_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
-  let deleteButton = {
-    text: deleteButtonTrans,
-    url: "{{ route('admin.priorities.massDestroy') }}",
-    className: 'btn-danger',
-    action: function (e, dt, node, config) {
-      var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
-          return $(entry).data('entry-id')
-      });
-
-      if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
-
-        return
-      }
-
-      if (confirm('{{ trans('global.areYouSure') }}')) {
-        $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
-      }
-    }
-  }
-  dtButtons.push(deleteButton)
-@endcan
 
   $.extend(true, $.fn.dataTable.defaults, {
     order: [[ 1, 'desc' ]],

@@ -19,9 +19,7 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-Category">
                 <thead>
                     <tr>
-                        <th width="10">
 
-                        </th>
                         <th>
                             {{ trans('cruds.category.fields.id') }}
                         </th>
@@ -32,16 +30,14 @@
                             {{ trans('cruds.category.fields.color') }}
                         </th>
                         <th>
-                            &nbsp;
+                            {{ trans('global.actions') }}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($categories as $key => $category)
                         <tr data-entry-id="{{ $category->id }}">
-                            <td>
 
-                            </td>
                             <td>
                                 {{ $category->id ?? '' }}
                             </td>
@@ -87,36 +83,6 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('category_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
-  let deleteButton = {
-    text: deleteButtonTrans,
-    url: "{{ route('admin.categories.massDestroy') }}",
-    className: 'btn-danger',
-    action: function (e, dt, node, config) {
-      var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
-          return $(entry).data('entry-id')
-      });
-
-      if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
-
-        return
-      }
-
-      if (confirm('{{ trans('global.areYouSure') }}')) {
-        $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
-      }
-    }
-  }
-  dtButtons.push(deleteButton)
-@endcan
-
   $.extend(true, $.fn.dataTable.defaults, {
     order: [[ 1, 'desc' ]],
     pageLength: 100,
@@ -127,6 +93,5 @@
             .columns.adjust();
     });
 })
-
 </script>
 @endsection

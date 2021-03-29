@@ -35,7 +35,7 @@
                         {{ trans('cruds.auditLog.fields.created_at') }}
                     </th>
                     <th>
-                        &nbsp;
+                        {{ trans('global.actions') }}
                     </th>
                 </tr>
             </thead>
