@@ -29,7 +29,7 @@
                     <!-- Cod equipo reportado-->
                     <div class="form-group {{ $errors->has('device') ? 'has-error' : '' }}">
                         <label for="device">Cod activo fijo*</label>
-                        <input type="number" id="device" class="form-control" value="{{ old('device', isset($ticket) ? $ticket->device : '') }}" required disabled>
+                        <input type="text" id="device" class="form-control" value="{{ old('device', isset($ticket) ? $ticket->device : '') }}" required disabled>
                         <input type="hidden" id="device_id" name="device_id">
                         @if($errors->has('device'))
                             <em class="invalid-feedback">
@@ -68,7 +68,7 @@
 
             
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-              <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-dialog modal-xl" role="document" style="padding:2px !important">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title left" id="exampleModalLabel">Busqueda de activo fijo</h4>
@@ -79,26 +79,25 @@
                     <table class="table table-striped" id="datatable-Device">
                         <thead>
                         <tr>
-                            <th></th>
                             <th>Cod activo fijo</th>
-                            <th>Equipo</th>
+                            <th>Activo Fijo</th>
                             <th>Marca</th>
                             <th>Modelo</th>
+                            <th>Serie</th>
                             <th>Ubicación</th>
                             <th>Tipo</th>
                             <th>Area</th>
-                            <th>Seleccionar</th>
-
+                            <th>Acciones</th>
                         </tr>
                         <thead>
                         <tbody>
                             @foreach ($devices as $device)
                                 <tr>
-                                    <td></td>
                                     <td id="codactf">{{$device->codactf}}</td>
                                     <td>{{$device->equipo}}</td>
                                     <td>{{$device->marca}}</td>
                                     <td>{{$device->modelo}}</td>
+                                    <td>{{$device->serie}}</td>
                                     <td>{{$device->ubicacion}}</td>
                                     <td>{{$device->tipo}}</td>
                                     <td>{{$device->area->name}}</td>
