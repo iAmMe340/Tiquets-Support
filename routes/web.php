@@ -1,5 +1,8 @@
 <?php
-Route::get('/', 'TicketController@create');
+Route::get('/', function () {
+    return redirect()->route('login');
+});
+
 Route::get('/home', function () {
     $route = Gate::denies('dashboard_access') ? 'admin.tickets.index' : 'admin.home';
     if (session('status')) {
