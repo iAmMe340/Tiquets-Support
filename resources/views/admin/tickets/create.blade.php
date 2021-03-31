@@ -202,7 +202,8 @@
             </div>
             <div class="form-group {{ $errors->has('author_name') ? 'has-error' : '' }}">
                 <label for="author_name">{{ trans('cruds.ticket.fields.author_name') }}</label>
-                <input type="text" id="author_name" name="author_name" class="form-control" value="{{auth()->user()->name}}" disabled>
+                <input type="text" id="author_name" name="" class="form-control" value="{{auth()->user()->name}}" disabled>
+                <input type="hidden" id="author_name" name="author_name" class="form-control" value="{{auth()->user()->name}}">
                 @if($errors->has('author_name'))
                     <em class="invalid-feedback">
                         {{ $errors->first('author_name') }}
