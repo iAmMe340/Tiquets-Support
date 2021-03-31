@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="brand-card">
-                            <div class="brand-card-header bg-green">
+                            <div class="brand-card-header bg-yellow">
                                 <i class="fa fa-warning"></i>
                             </div>
                             <div class="brand-card-body">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="brand-card">
-                            <div class="brand-card-header bg-red">
+                            <div class="brand-card-header bg-green">
                                 <i class="fa fa-check-circle"></i>
                             </div>
                             <div class="brand-card-body">
