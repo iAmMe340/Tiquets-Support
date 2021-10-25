@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\seeders;
 use App\Status;
 use Illuminate\Database\Seeder;
 

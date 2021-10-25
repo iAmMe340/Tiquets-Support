@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            
+
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
               <div class="modal-dialog modal-xl" role="document" style="padding:2px !important">
                 <div class="modal-content">
@@ -104,7 +104,7 @@
                                     <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="document.getElementById('device').value={{ $device->codactf }};document.getElementById('device_id').value={{ $device->id }};document.getElementById('nomDevice').value='{{ $device->equipo }}'">
                                         Seleccionar
                                         </button></td>
-                                        
+
                                 </tr>
                             @endforeach
                         </tbody>
@@ -142,7 +142,7 @@
                     {{ trans('cruds.ticket.fields.attachments_helper') }}
                 </p>
             </div>
-            
+
             <!-- Campo Servicio -->
             <div class="form-group {{ $errors->has('area_id') ? 'has-error' : '' }}">
                 <label for="area">{{ trans('cruds.ticket.fields.service') }}*</label>
@@ -173,7 +173,7 @@
             </div>
             @else
             <input type="hidden" name="status_id" value=1>
-            @endif 
+            @endif
             <div class="form-group {{ $errors->has('priority_id') ? 'has-error' : '' }}">
                 <label for="priority">{{ trans('cruds.ticket.fields.priority') }}*</label>
                 <select name="priority_id" id="priority" class="form-control select2" required>
@@ -214,7 +214,7 @@
                 </p>
             </div>
 
-           <!-- Correo persona crea ticket 
+        
             <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
                 <label for="author_email">{{ trans('cruds.ticket.fields.author_email') }}</label>
                 <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($ticket) ? $ticket->author_email : '') }}">
@@ -227,7 +227,7 @@
                     {{ trans('cruds.ticket.fields.author_email_helper') }}
                 </p>
             </div>
-            -->
+
 
             @if(auth()->user()->isAdmin())
                 <div class="form-group {{ $errors->has('assigned_to_user_id') ? 'has-error' : '' }}">
