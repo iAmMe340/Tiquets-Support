@@ -1,7 +1,10 @@
 <?php
-namespace Database\seeders;
+namespace Database\Seeders;
 use App\Status;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class StatusesTableSeeder extends Seeder
 {

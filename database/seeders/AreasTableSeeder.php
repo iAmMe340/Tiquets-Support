@@ -1,5 +1,5 @@
 <?php
-namespace Database\seeders;
+namespace Database\Seeders;
 use App\Area;
 
 use Illuminate\Database\Seeder;

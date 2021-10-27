@@ -1,7 +1,10 @@
 <?php
-namespace Database\seeders;
+namespace Database\Seeders;
 use App\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -12,6 +15,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+
         $faker = Faker\Factory::create();
         $categories = [
             "GSI/Soporte", "GT/Soporte Biomedico", "GT/Soporte Sistemas", "GAF/Infraestructura"
