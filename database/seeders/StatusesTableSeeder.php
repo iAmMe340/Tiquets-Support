@@ -17,7 +17,7 @@ class StatusesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $statuses = [
-            'Abierto', 'Cerrado'
+            'Abierto', 'Cerrado', 'Suspendido'
         ];
 
         foreach($statuses as $status)

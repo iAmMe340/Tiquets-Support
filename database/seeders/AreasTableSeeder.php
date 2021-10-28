@@ -20,7 +20,7 @@ class AreasTableSeeder extends Seeder
             ],
             [
                 'id'    => 2,
-                'name' => 'UCI ADULTOS 7',
+                'name' => 'QUIROFANO',
             ],
             [
                 'id'    => 3,
@@ -41,6 +41,30 @@ class AreasTableSeeder extends Seeder
             [
                 'id'    => 7,
                 'name' => 'UCI COVID',
+            ],
+            [
+                'id'    => 8,
+                'name' => 'UCI 7 ADULTOS LADO A',
+            ],
+            [
+                'id'    => 9,
+                'name' => 'UCI 7 ADULTOS LADO B',
+            ],
+            [
+                'id'    => 10,
+                'name' => 'UCI 7 ADULTOS LADO C',
+            ],
+            [
+                'id'    => 11,
+                'name' => 'UCI 7 ADULTOS LADO D',
+            ],
+            [
+                'id'    => 12,
+                'name' => 'Call Center',
+            ],
+            [
+                'id'    => 13,
+                'name' => 'Talento Humano',
             ],
         ];
 
