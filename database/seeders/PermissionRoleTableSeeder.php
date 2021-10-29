@@ -18,5 +18,6 @@ class PermissionRoleTableSeeder extends Seeder
             return substr($permission->title, 0, 7) == 'ticket_' && $permission->title != 'ticket_create' && $permission->title != 'ticket_close';
         });
         Role::findOrFail(3)->permissions()->sync($colaborator_permissions);
+        
     }
 }
