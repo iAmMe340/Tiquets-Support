@@ -117,7 +117,7 @@ class TicketsController extends Controller
 
         $categories = Category::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $areas = Area::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $areas = Area::all()->pluck('name', 'id')->sortBy('id');
 
         $devices = Device::all();
 
@@ -126,18 +126,19 @@ class TicketsController extends Controller
             })
             ->pluck('name', 'id')
             ->prepend(trans('global.pleaseSelect'), '');
-
+            
         return view('admin.tickets.create', compact('statuses', 'priorities', 'categories', 'areas', 'assigned_to_users', 'devices'));
     }
 
     public function store(StoreTicketRequest $request)
     {
+            
         $ticket = Ticket::create($request->all());
-
+        return 'neisimas';
         foreach ($request->input('attachments', []) as $file) {
             $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
         }
-
+    
         return redirect()->route('admin.tickets.index');
     }
 

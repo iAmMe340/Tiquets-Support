@@ -48,7 +48,7 @@
                     <th>
                         {{ trans('cruds.ticket.fields.assigned_to_user') }}
                     </th>
-                    <th>
+                    <th nowrap>
                         {{ trans('global.actions') }}
                     </th>
                 </tr>

@@ -15,7 +15,7 @@ class StatusesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = \Faker\Factory::create();
         $statuses = [
             'Abierto', 'Cerrado'
         ];

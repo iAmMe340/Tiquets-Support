@@ -19,9 +19,7 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-Permission">
                 <thead>
                     <tr>
-                        <th>
-                            {{ trans('cruds.permission.fields.id') }}
-                        </th>
+                       
                         <th>
                             {{ trans('cruds.permission.fields.title') }}
                         </th>
@@ -34,9 +32,7 @@
                     @foreach($permissions as $key => $permission)
                         <tr data-entry-id="{{ $permission->id }}">
 
-                            <td>
-                                {{ $permission->id ?? '' }}
-                            </td>
+                           
                             <td>
                                 {{ $permission->title ?? '' }}
                             </td>

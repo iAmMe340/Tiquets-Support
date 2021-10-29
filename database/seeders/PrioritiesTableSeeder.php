@@ -15,7 +15,7 @@ class PrioritiesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = \Faker\Factory::create();
         $priorities = [
             'Baja', 'Media', 'Alta'
         ];

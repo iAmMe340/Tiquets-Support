@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
 
-        $faker = Faker\Factory::create();
+        $faker = \Faker\Factory::create();
         $categories = [
             "GSI/Soporte", "GT/Soporte Biomedico", "GT/Soporte Sistemas", "GAF/Infraestructura"
         ];

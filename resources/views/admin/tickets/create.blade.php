@@ -100,7 +100,7 @@
                                     <td>{{$device->serie}}</td>
                                     <td>{{$device->ubicacion}}</td>
                                     <td>{{$device->tipo}}</td>
-                                    <td>{{$device->area->name}}</td>
+                                    <td>{{$areas[$device->area_id]}}</td>
                                     <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="document.getElementById('device').value={{ $device->codactf }};document.getElementById('device_id').value={{ $device->id }};document.getElementById('nomDevice').value='{{ $device->equipo }}'">
                                         Seleccionar
                                         </button></td>

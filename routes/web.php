@@ -18,7 +18,7 @@ Auth::routes(['register' => true]);
 
 Route::post('tickets/media', 'TicketController@storeMedia')->name('tickets.storeMedia');
 Route::post('tickets/comment/{ticket}', 'TicketController@storeComment')->name('tickets.storeComment');
-Route::resource('tickets', 'TicketController')->only(['show', 'create', 'store']);
+Route::resource('tickets', 'TicketController')->only(['show', 'create', 'store'])->middleware('auth');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('categories', 'CategoriesController');
 
     // Tickets
+    
     Route::delete('tickets/destroy', 'TicketsController@massDestroy')->name('tickets.massDestroy');
     Route::post('tickets/media', 'TicketsController@storeMedia')->name('tickets.storeMedia');
     Route::post('tickets/comment/{ticket}', 'TicketsController@storeComment')->name('tickets.storeComment');
